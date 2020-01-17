@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to product_path(@review.album)
+    redirect_to product_path(@review.project)
   end
   # DO NOT HAVE PRIVATE ABOVE THIS COMMENT
   private

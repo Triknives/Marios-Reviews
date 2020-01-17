@@ -3,9 +3,15 @@
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :author %>
   <%= f.text_field :author %>
+  <br>
+  <br>
   <%= f.label :rating%>
-  <%= f.number_area :rating %>
+  <%= f.number_field :rating %>
+  <br>
+  <br>
   <%= f.label :content_body %>
   <%= f.text_field :content_body %>
+  <br>
+  <br>
   <p><%= f.submit %></p>
 <% end %>

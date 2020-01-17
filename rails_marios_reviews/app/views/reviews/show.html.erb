@@ -1,6 +1,6 @@
 <h2>Review: <%= @review.author %></h2>
 <h3>Product: <%= @product.name %></h3>
-<h3><%= @review.rating %></h3>
+<h3><%= @review.rating %> out of 5</h3>
 <h4><%= @review.content_body %></h4>
 
 <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
