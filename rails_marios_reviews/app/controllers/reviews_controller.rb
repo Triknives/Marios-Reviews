@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
+      flash[:notice] = "WOW! Thanks for leaving a review!"
       redirect_to product_path(@product)
     else
       render :new
@@ -22,7 +23,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @project = Product.find(params[:project_id])
+    @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     render :edit
   end
@@ -39,7 +40,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to product_path(@review.project)
+    redirect_to product_path(@review.product)
   end
   # DO NOT HAVE PRIVATE ABOVE THIS COMMENT
   private
